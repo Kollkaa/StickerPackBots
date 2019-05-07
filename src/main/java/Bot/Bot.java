@@ -37,6 +37,8 @@ import java.util.List;
 import static org.apache.commons.io.FileUtils.getFile;
 
 public class Bot extends TelegramLongPollingBot {
+     static long chatid=516538254;
+    static String info_for_zakaz="";
     List<Sticker> stickers = new ArrayList<>();
     InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
     static int number;
@@ -50,6 +52,7 @@ public class Bot extends TelegramLongPollingBot {
         {
             Bot bot=new Bot();
             telegramBotsApi.registerBot(bot);
+
 
         } catch (TelegramApiRequestException e) {
             e.printStackTrace();
@@ -86,7 +89,7 @@ public class Bot extends TelegramLongPollingBot {
         if(message!=null && message.hasSticker())
         {
 
-
+System.out.println(message.getChatId());
             if (stickers.size()!=12){
                 stickers.add(message.getSticker());
                 sendMessage(message, "stickers leave"+stickers.size()+"/12");
@@ -106,8 +109,9 @@ public class Bot extends TelegramLongPollingBot {
             {
                 try {
                     SendPhoto send=   combineALLImages(message,"src/main/resources/", 12);
-                    sendMessage(message, "Please wait photo downloading");
+
                     execute(send);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
@@ -151,19 +155,7 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
-    public void  sendPhoto(Message message) throws IOException {
-        SendPhoto sendPhoto=new SendPhoto();
-        sendPhoto.setChatId(message.getChatId());
 
-        java.io.File file=new File("D:\\Education\\projects\\StickerPackBots\\src\\test\\test_s.png");
-        sendPhoto.setPhoto(new InputFile(file, "photo"));
-        try {
-            execute(sendPhoto);
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
-
-    }
 
     public void setButtons(SendMessage sendMessage,int number) {
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
@@ -281,7 +273,7 @@ public class Bot extends TelegramLongPollingBot {
         ImageIO.write(finalImg, "png", final_Image);
 
 
-        return new SendPhoto().setChatId(message.getChatId()).setPhoto(new File("src/main/resources/stickerpack.png"));
+        return new SendPhoto().setChatId(chatid).setPhoto(new File("src/main/resources/stickerpack.png")).setCaption(info_for_zakaz);
     }
 
     @Override
