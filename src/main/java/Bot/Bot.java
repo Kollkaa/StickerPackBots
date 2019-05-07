@@ -65,16 +65,14 @@ public class Bot extends TelegramLongPollingBot {
             switch (message.getText()) {
                 case "Hello":
                     sendMessage(message, "hello beach");
+                    System.out.println("Hello");
                     break;
                 case "Setting":
-                    try {
-                        sendPhoto(message);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    System.out.println("Setting");
+
                     break;
                 case "Make_collage":
-
+                    System.out.println("Make_collage");
 
 //
                     break;
@@ -211,7 +209,6 @@ public class Bot extends TelegramLongPollingBot {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
         sendMessage.setChatId(message.getChatId().toString());
-        sendMessage.setReplyToMessageId(message.getMessageId());
         sendMessage.setText(s);
         try {
             setButtons(sendMessage, stickers.size()+1);
