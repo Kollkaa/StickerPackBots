@@ -11,10 +11,10 @@ import java.io.IOException;
 
 public class DecodeTest {
     public static void main(String args[]) throws IOException {
-        String inputWebpPath = "test_pic/test.webp";
+        String inputWebpPath = "test_pic/sticker.webp";
         String outputJpgPath = "test_pic/test_.jpg";
         String outputJpegPath = "test_pic/test_.jpeg";
-        String outputPngPath = "test_pic/test_.png";
+        String outputPngPath = "test_pic/test_si.png";
 
         // Obtain a WebP ImageReader instance
         ImageReader reader = ImageIO.getImageReadersByMIMEType("image/webp").next();
