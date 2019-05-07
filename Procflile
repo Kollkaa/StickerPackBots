@@ -1,1 +1,1 @@
-bot: java -class target/classes/Bot/Bot.class
+worker: sh target/classes/Bot/Bot
