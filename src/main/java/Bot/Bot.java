@@ -41,9 +41,11 @@ public class Bot extends TelegramLongPollingBot {
     InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
     static int number;
     public static void main(String... args) {
+        System.out.println("start");
         ApiContextInitializer.init();
+        System.out.println("init");
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
-
+        System.out.println("contunie");
         try//
         {
             Bot bot=new Bot();
