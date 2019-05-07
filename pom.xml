@@ -62,7 +62,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>Bot.Bot</mainClass>
+                            <mainClass>classes.Bot.Bot</mainClass>
                             <name>workerBot</name>
                         </program>
                     </programs>
