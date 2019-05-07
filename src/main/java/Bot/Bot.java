@@ -74,7 +74,7 @@ public class Bot extends TelegramLongPollingBot {
                 case "Make_collage":
 
 
-
+//
                     break;
                 default:
                     System.out.println(message.getText());
