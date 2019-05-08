@@ -107,7 +107,7 @@ public class Bot extends TelegramLongPollingBot {
                         break;
                         default:
                           try {
-                              if (message.getText().length()>20)
+                              if (message.getText().length()>12)
                               {
                                   sendMessage.setChatId(chatid);
                                   sendMessage.setText(message.getText());
@@ -168,7 +168,7 @@ public class Bot extends TelegramLongPollingBot {
                     sendApiMethod(sendMessage.setReplyMarkup(remakeButtons("/all", replyKeyboardMarkup, number)));
                 execute(send);
                 Thread.sleep(100);
-                    sendMessage.setText("Напишите свое Ф.И.О.\nсвой город\n  и отделение новой почты ");
+                    sendMessage.setText("Напишите свое Ф.И.О.\nсвой город\n номер телефона\n  и отделение новой почты ");
                     sendApiMethod(sendMessage.setReplyMarkup(remakeButtons("/all", replyKeyboardMarkup, number)));
 
                     number=0;
