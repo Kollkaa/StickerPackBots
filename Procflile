@@ -1,1 +1,1 @@
-worker: sh target/bin/workerBot
+web: run -java target/Bot/Bot.java
