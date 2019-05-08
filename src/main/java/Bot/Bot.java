@@ -137,7 +137,7 @@ public class Bot extends TelegramLongPollingBot {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-//
+
 
             }
             if(stickers.size()==12)
