@@ -1,1 +1,1 @@
-worker: java -jar target/stick-pack-bot.jar Bot.Bot
+worker: sh target/bin/workerBot

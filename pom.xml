@@ -39,6 +39,7 @@
                     <programs>
                         <program>
                             <mainClass>Bot.Bot</mainClass>
+                            <name>workerBot</name>
                         </program>
                     </programs>
                 </configuration>
