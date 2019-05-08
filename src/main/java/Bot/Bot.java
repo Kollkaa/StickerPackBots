@@ -74,16 +74,7 @@ public class Bot extends TelegramLongPollingBot {
             replyKeyboardMarkup.setResizeKeyboard(true);
             replyKeyboardMarkup.setOneTimeKeyboard(false);
             replyKeyboardMarkup.setSelective(true);
-            if(replyKeyboardMarkup.getKeyboard().size()==1)
-            {
-                sendMessage.setText("Заказ оформлен, ожидайте вскоре с вами свяжуться");
-                try {
-                    sendApiMethod(sendMessage.setReplyMarkup(remakeButtons("Оформить", replyKeyboardMarkup, number)));
-                } catch (TelegramApiException e) {
-                    e.printStackTrace();
-                }
 
-            }///
             switch (message.getText()) {
                    case   "О боте:" :
                       try {
@@ -268,8 +259,9 @@ public class Bot extends TelegramLongPollingBot {
             case "/yes/no":
                 keyboardRow1.clear();
                 keyboardButton1.setText("да");
-                keyboardButton1.setText("нет");
-
+                keyboardButton2.setText("нет");
+                keyboardRow1.add(keyboardButton1);
+                keyboardRow1.add(keyboardButton2);
                 return replyKeyboardMarkup;
                 case "Сделать макет:":keyboardRow1.clear();
 

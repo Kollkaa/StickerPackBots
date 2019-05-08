@@ -30,8 +30,6 @@
     <build>
         <finalName>stickpackbot</finalName>
         <plugins>
-
-
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>appassembler-maven-plugin</artifactId>
@@ -41,7 +39,6 @@
                     <programs>
                         <program>
                             <mainClass>Bot.Bot</mainClass>
-                            <name>workerBot</name>
                         </program>
                     </programs>
                 </configuration>
