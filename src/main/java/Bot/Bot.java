@@ -83,7 +83,7 @@ public class Bot extends TelegramLongPollingBot {
                     e.printStackTrace();
                 }
 
-            }////
+            }//////
             switch (message.getText()) {
                    case   "О боте:" :
                       try {
