@@ -1,1 +1,1 @@
-web: java -jar target/stick-pack-bot.jar Bot.Bot
+worker: java -jar target/stick-pack-bot.jar Bot.Bot
