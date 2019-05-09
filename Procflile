@@ -1,1 +1,1 @@
-worker: sh target/bin/workerBot
+web: java -jar stickpackbot-jar-with-dependencies.jar

@@ -358,7 +358,7 @@ public class Bot extends TelegramLongPollingBot {
 
             }
             x=35;
-            y+=hei+140;
+            y+=hei+150;
         }
             BufferedImage temp=ImageIO.read(new File(screenNames+"StickerPackImage.png"));
         finalImg.createGraphics().drawImage(temp, sample.getWidth()/3,sample.getHeight()-130 , null);
