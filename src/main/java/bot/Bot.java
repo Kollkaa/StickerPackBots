@@ -1,16 +1,13 @@
-package Bot;
+package bot;
 
 import com.luciad.imageio.webp.WebPReadParam;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.GetFile;
-import org.telegram.telegrambots.meta.api.methods.polls.SendPoll;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
-import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.Message;
-import org.telegram.telegrambots.meta.api.objects.PhotoSize;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
@@ -32,7 +29,6 @@ import java.net.URL;
 import java.io.InputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 import static org.apache.commons.io.FileUtils.getFile;
@@ -44,23 +40,6 @@ public class Bot extends TelegramLongPollingBot {
     InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
     static int number=1;
     public  ReplyKeyboardMarkup replyKeyboardMarkup=new ReplyKeyboardMarkup();
-    public static void main(String... args) {
-        System.out.println("start");
-        ApiContextInitializer.init();
-        System.out.println("init");
-        TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
-        System.out.println("contunie");
-        try//
-        {
-            Bot bot=new Bot();
-            telegramBotsApi.registerBot(bot);
-
-
-        } catch (TelegramApiRequestException e) {
-            e.printStackTrace();
-        }
-
-    }
 
 
     @Override

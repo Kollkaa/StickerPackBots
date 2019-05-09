@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="stick-pack-bot">
+    <output-path>$PROJECT_DIR$/classes/artifacts/stick_pack_bot</output-path>
+    <root id="archive" name="stick-pack-bot.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
