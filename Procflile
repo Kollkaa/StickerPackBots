@@ -1,1 +1,1 @@
-web: java -jar stickpackbot-jar-with-dependencies.jar
+web: java -jar target/stickpackbot-jar-with-dependencies.jar
