@@ -55,10 +55,22 @@ public class Bot extends TelegramLongPollingBot {
             replyKeyboardMarkup.setSelective(true);
 
             switch (message.getText()) {
+                case"/start":
+                    stickers=new ArrayList<>();
+                    number=0;
+
+
+                        try {
+                            System.out.println("start");
+                            sendApiMethod(sendMessage.setText("Приветсвую я StickerPackBot, \n если тебе нужно распечатать стикера тогда сделай сначала макет").setReplyMarkup(remakeButtons(message.getText(), replyKeyboardMarkup, stickers.size())));
+                        } catch (TelegramApiException e) {
+                            e.printStackTrace();
+                        }
+                        break;
                    case   "О боте:" :
                       try {
 
-                        sendApiMethod(sendMessage.setText("Этот бот создает макет Sticker Book из вашых стикеров").setReplyMarkup(remakeButtons(message.getText(), replyKeyboardMarkup, number)));
+                        sendApiMethod(sendMessage.setText("Этот бот создает макет Sticker Book из вашых стикеров").setReplyMarkup(remakeButtons(message.getText(), replyKeyboardMarkup, stickers.size())));
                     } catch (TelegramApiException e) {
                         e.printStackTrace();
                     }
@@ -77,9 +89,9 @@ public class Bot extends TelegramLongPollingBot {
                        break;
                       case  "Сделать макет:"  :
                        try{
+                            stickers=new ArrayList<>();
 
-
-                           sendApiMethod(sendMessage.setText("Отправте 12 стикеров").setReplyMarkup(remakeButtons(message.getText(), replyKeyboardMarkup, number)));
+                           sendApiMethod(sendMessage.setText("Отправте 12 стикеров").setReplyMarkup(remakeButtons(message.getText(), replyKeyboardMarkup, stickers.size())));
                            } catch (TelegramApiException e) {
                            e.printStackTrace();
                            }
@@ -93,12 +105,12 @@ public class Bot extends TelegramLongPollingBot {
                                   execute(sendMessage);
                                   sendMessage.setChatId(message.getChatId());
                                   sendMessage.setText("Ваш заказ принят\n ожидайте с вами свяжуться\n не желаете попробовать ещё?");
-                                  sendApiMethod(sendMessage.setReplyMarkup(remakeButtons("/yes/no", replyKeyboardMarkup, number)));
+                                  sendApiMethod(sendMessage.setReplyMarkup(remakeButtons("/yes/no", replyKeyboardMarkup, stickers.size())));
 
                               }
                               else {
                                   sendMessage.setText("----");
-                                  sendApiMethod(sendMessage.setReplyMarkup(remakeButtons(message.getText(), replyKeyboardMarkup, number)));
+                                  sendApiMethod(sendMessage.setReplyMarkup(remakeButtons(message.getText(), replyKeyboardMarkup, stickers.size())));
                               }
                           } catch (TelegramApiException e) {
                                  e.printStackTrace();
